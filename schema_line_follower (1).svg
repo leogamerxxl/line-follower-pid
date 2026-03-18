@@ -1,0 +1,297 @@
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', monospace">
+<rect width="900" height="620" fill="#0A0A08"/>
+
+<!-- Grid -->
+<defs>
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(245,158,11,0.06)" stroke-width="0.5"/>
+  </pattern>
+  <!-- Arrow marker -->
+  <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+    <path d="M0,0 L6,3 L0,6 Z" fill="#F59E0B" opacity="0.7"/>
+  </marker>
+  <marker id="arr-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+    <path d="M0,0 L6,3 L0,6 Z" fill="#ef4444" opacity="0.8"/>
+  </marker>
+  <marker id="arr-blue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+    <path d="M0,0 L6,3 L0,6 Z" fill="#60a5fa" opacity="0.8"/>
+  </marker>
+</defs>
+<rect width="900" height="620" fill="url(#grid)"/>
+
+<!-- Title -->
+<text x="450" y="32" text-anchor="middle" fill="#F59E0B" font-size="13" letter-spacing="4" font-weight="500">LINE FOLLOWER — ELECTRICAL SCHEMATIC v1.0</text>
+<text x="450" y="50" text-anchor="middle" fill="#3D3B34" font-size="9" letter-spacing="2">Arduino Nano · TCRT5000×5 · L298N · 3.7V Li-Ion</text>
+<line x1="60" y1="58" x2="840" y2="58" stroke="#F59E0B" stroke-width="0.5" opacity="0.3"/>
+
+<!-- ═══════════════════════════════════════
+     BATTERY  (top left)
+════════════════════════════════════════ -->
+<g transform="translate(60,80)">
+  <rect width="110" height="60" rx="4" fill="#141410" stroke="#B45309" stroke-width="1"/>
+  <text x="55" y="18" text-anchor="middle" fill="#F59E0B" font-size="9" letter-spacing="1">BATTERY</text>
+  <text x="55" y="30" text-anchor="middle" fill="#E8E4D9" font-size="11" font-weight="500">Li-Ion 3.7V</text>
+  <text x="55" y="44" text-anchor="middle" fill="#7A7568" font-size="8">Phone salvaged cell</text>
+  <!-- + terminal -->
+  <circle cx="20" cy="55" r="5" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="20" y="59" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="500">+</text>
+  <!-- - terminal -->
+  <circle cx="90" cy="55" r="5" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="90" y="59" text-anchor="middle" fill="#60a5fa" font-size="9" font-weight="500">−</text>
+</g>
+
+<!-- ═══════════════════════════════════════
+     L298N  (center-left)
+════════════════════════════════════════ -->
+<g transform="translate(60,220)">
+  <rect width="160" height="240" rx="4" fill="#141410" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="80" y="18" text-anchor="middle" fill="#F59E0B" font-size="9" letter-spacing="1">L298N</text>
+  <text x="80" y="30" text-anchor="middle" fill="#E8E4D9" font-size="10" font-weight="500">Motor Driver</text>
+
+  <!-- Left side pins — inputs from Arduino -->
+  <text x="8" y="60"  fill="#7A7568" font-size="8">IN1</text>
+  <circle cx="4" cy="57" r="3" fill="#22c55e" opacity="0.8"/>
+  <text x="8" y="80"  fill="#7A7568" font-size="8">IN2</text>
+  <circle cx="4" cy="77" r="3" fill="#22c55e" opacity="0.8"/>
+  <text x="8" y="100" fill="#7A7568" font-size="8">ENA</text>
+  <circle cx="4" cy="97" r="3" fill="#a78bfa" opacity="0.8"/>
+
+  <text x="8" y="130" fill="#7A7568" font-size="8">IN3</text>
+  <circle cx="4" cy="127" r="3" fill="#22c55e" opacity="0.8"/>
+  <text x="8" y="150" fill="#7A7568" font-size="8">IN4</text>
+  <circle cx="4" cy="147" r="3" fill="#22c55e" opacity="0.8"/>
+  <text x="8" y="170" fill="#7A7568" font-size="8">ENB</text>
+  <circle cx="4" cy="167" r="3" fill="#a78bfa" opacity="0.8"/>
+
+  <!-- Power pins -->
+  <text x="8" y="200" fill="#ef4444" font-size="8">VCC</text>
+  <circle cx="4" cy="197" r="3" fill="#ef4444" opacity="0.9"/>
+  <text x="8" y="218" fill="#60a5fa" font-size="8">GND</text>
+  <circle cx="4" cy="215" r="3" fill="#60a5fa" opacity="0.9"/>
+
+  <!-- Right side — motor outputs -->
+  <text x="130" y="60"  fill="#7A7568" font-size="8" text-anchor="end">OUT1</text>
+  <circle cx="156" cy="57"  r="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="130" y="80"  fill="#7A7568" font-size="8" text-anchor="end">OUT2</text>
+  <circle cx="156" cy="77"  r="3" fill="#F59E0B" opacity="0.8"/>
+
+  <text x="130" y="130" fill="#7A7568" font-size="8" text-anchor="end">OUT3</text>
+  <circle cx="156" cy="127" r="3" fill="#F59E0B" opacity="0.8"/>
+  <text x="130" y="150" fill="#7A7568" font-size="8" text-anchor="end">OUT4</text>
+  <circle cx="156" cy="147" r="3" fill="#F59E0B" opacity="0.8"/>
+
+  <!-- 5V out pin -->
+  <text x="130" y="200" fill="#22c55e" font-size="8" text-anchor="end">5V out</text>
+  <circle cx="156" cy="197" r="3" fill="#22c55e" opacity="0.9"/>
+
+  <!-- Heatsink symbol -->
+  <rect x="55" y="195" width="50" height="30" rx="2" fill="none" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="63" y1="195" x2="63" y2="225" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="71" y1="195" x2="71" y2="225" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="79" y1="195" x2="79" y2="225" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="87" y1="195" x2="87" y2="225" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="95" y1="195" x2="95" y2="225" stroke="#3D3B34" stroke-width="0.8"/>
+  <text x="80" y="238" text-anchor="middle" fill="#3D3B34" font-size="7">heatsink</text>
+</g>
+
+<!-- ═══════════════════════════════════════
+     ARDUINO NANO  (center)
+════════════════════════════════════════ -->
+<g transform="translate(320,180)">
+  <rect width="180" height="280" rx="4" fill="#0a1628" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="0" y="0" width="180" height="28" rx="4" fill="#1e3a5f" opacity="0.8"/>
+  <text x="90" y="13" text-anchor="middle" fill="#60a5fa" font-size="9" letter-spacing="1">ARDUINO NANO</text>
+  <text x="90" y="24" text-anchor="middle" fill="#3b82f6" font-size="8">ATmega328P · 16MHz</text>
+
+  <!-- Left pins -->
+  <text x="8" y="55"  fill="#7A7568" font-size="8">D3~</text>  <circle cx="3" cy="52"  r="3" fill="#a78bfa" opacity="0.9"/>
+  <text x="8" y="73"  fill="#7A7568" font-size="8">D5~</text>  <circle cx="3" cy="70"  r="3" fill="#22c55e" opacity="0.9"/>
+  <text x="8" y="91"  fill="#7A7568" font-size="8">D6~</text>  <circle cx="3" cy="88"  r="3" fill="#22c55e" opacity="0.9"/>
+  <text x="8" y="109" fill="#7A7568" font-size="8">D9~</text>  <circle cx="3" cy="106" r="3" fill="#22c55e" opacity="0.9"/>
+  <text x="8" y="127" fill="#7A7568" font-size="8">D10~</text> <circle cx="3" cy="124" r="3" fill="#22c55e" opacity="0.9"/>
+  <text x="8" y="145" fill="#7A7568" font-size="8">D11~</text> <circle cx="3" cy="142" r="3" fill="#a78bfa" opacity="0.9"/>
+  <text x="8" y="175" fill="#ef4444" font-size="8">5V</text>   <circle cx="3" cy="172" r="3" fill="#ef4444" opacity="0.9"/>
+  <text x="8" y="193" fill="#60a5fa" font-size="8">GND</text>  <circle cx="3" cy="190" r="3" fill="#60a5fa" opacity="0.9"/>
+
+  <!-- Right pins — analog -->
+  <text x="160" y="55"  fill="#7A7568" font-size="8" text-anchor="end">A0</text> <circle cx="177" cy="52"  r="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="160" y="73"  fill="#7A7568" font-size="8" text-anchor="end">A1</text> <circle cx="177" cy="70"  r="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="160" y="91"  fill="#7A7568" font-size="8" text-anchor="end">A2</text> <circle cx="177" cy="88"  r="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="160" y="109" fill="#7A7568" font-size="8" text-anchor="end">A3</text> <circle cx="177" cy="106" r="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="160" y="127" fill="#7A7568" font-size="8" text-anchor="end">A4</text> <circle cx="177" cy="124" r="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="160" y="175" fill="#60a5fa" font-size="8" text-anchor="end">GND</text><circle cx="177" cy="172" r="3" fill="#60a5fa" opacity="0.9"/>
+
+  <!-- USB port symbol -->
+  <rect x="72" y="255" width="36" height="18" rx="2" fill="#1e3a5f" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="90" y="268" text-anchor="middle" fill="#3b82f6" font-size="7">USB</text>
+
+  <!-- ATmega chip symbol -->
+  <rect x="55" y="120" width="70" height="40" rx="2" fill="#0d1f38" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="90" y="136" text-anchor="middle" fill="#3b82f6" font-size="7">ATmega</text>
+  <text x="90" y="148" text-anchor="middle" fill="#3b82f6" font-size="7">328P</text>
+</g>
+
+<!-- ═══════════════════════════════════════
+     TCRT5000 SENSOR ARRAY  (top center)
+════════════════════════════════════════ -->
+<g transform="translate(290,68)">
+  <rect width="280" height="80" rx="4" fill="#141410" stroke="#fbbf24" stroke-width="1"/>
+  <text x="140" y="14" text-anchor="middle" fill="#fbbf24" font-size="9" letter-spacing="1">TCRT5000 × 5 — SENSOR ARRAY</text>
+  <!-- 5 sensors -->
+  <g transform="translate(18,22)">
+    <!-- S0 -->
+    <rect x="0"   y="0" width="40" height="36" rx="3" fill="#1a1208" stroke="#fbbf24" stroke-width="0.8"/>
+    <circle cx="20" cy="13" r="6" fill="#111" stroke="#fbbf24" stroke-width="0.5"/>
+    <circle cx="20" cy="13" r="3" fill="#222" stroke="#ef4444" stroke-width="0.5"/>
+    <text x="20" y="30" text-anchor="middle" fill="#fbbf24" font-size="7">S0</text>
+    <text x="20" y="50" text-anchor="middle" fill="#7A7568" font-size="7">A0</text>
+    <!-- S1 -->
+    <rect x="48"  y="0" width="40" height="36" rx="3" fill="#1a1208" stroke="#fbbf24" stroke-width="0.8"/>
+    <circle cx="68" cy="13" r="6" fill="#111" stroke="#fbbf24" stroke-width="0.5"/>
+    <circle cx="68" cy="13" r="3" fill="#222" stroke="#ef4444" stroke-width="0.5"/>
+    <text x="68" y="30" text-anchor="middle" fill="#fbbf24" font-size="7">S1</text>
+    <text x="68" y="50" text-anchor="middle" fill="#7A7568" font-size="7">A1</text>
+    <!-- S2 CENTER -->
+    <rect x="96"  y="0" width="40" height="36" rx="3" fill="#1a1208" stroke="#F59E0B" stroke-width="1.5"/>
+    <circle cx="116" cy="13" r="6" fill="#111" stroke="#F59E0B" stroke-width="0.8"/>
+    <circle cx="116" cy="13" r="3" fill="#222" stroke="#ef4444" stroke-width="0.5"/>
+    <text x="116" y="30" text-anchor="middle" fill="#F59E0B" font-size="7" font-weight="500">S2</text>
+    <text x="116" y="50" text-anchor="middle" fill="#F59E0B" font-size="7">A2 CTR</text>
+    <!-- S3 -->
+    <rect x="144" y="0" width="40" height="36" rx="3" fill="#1a1208" stroke="#fbbf24" stroke-width="0.8"/>
+    <circle cx="164" cy="13" r="6" fill="#111" stroke="#fbbf24" stroke-width="0.5"/>
+    <circle cx="164" cy="13" r="3" fill="#222" stroke="#ef4444" stroke-width="0.5"/>
+    <text x="164" y="30" text-anchor="middle" fill="#fbbf24" font-size="7">S3</text>
+    <text x="164" y="50" text-anchor="middle" fill="#7A7568" font-size="7">A3</text>
+    <!-- S4 -->
+    <rect x="192" y="0" width="40" height="36" rx="3" fill="#1a1208" stroke="#fbbf24" stroke-width="0.8"/>
+    <circle cx="212" cy="13" r="6" fill="#111" stroke="#fbbf24" stroke-width="0.5"/>
+    <circle cx="212" cy="13" r="3" fill="#222" stroke="#ef4444" stroke-width="0.5"/>
+    <text x="212" y="30" text-anchor="middle" fill="#fbbf24" font-size="7">S4</text>
+    <text x="212" y="50" text-anchor="middle" fill="#7A7568" font-size="7">A4</text>
+    <!-- Labels -->
+    <text x="20"  y="62" text-anchor="middle" fill="#3D3B34" font-size="6">far L</text>
+    <text x="68"  y="62" text-anchor="middle" fill="#3D3B34" font-size="6">mid L</text>
+    <text x="116" y="62" text-anchor="middle" fill="#F59E0B" font-size="6">center</text>
+    <text x="164" y="62" text-anchor="middle" fill="#3D3B34" font-size="6">mid R</text>
+    <text x="212" y="62" text-anchor="middle" fill="#3D3B34" font-size="6">far R</text>
+  </g>
+</g>
+
+<!-- ═══════════════════════════════════════
+     MOTORS  (right side)
+════════════════════════════════════════ -->
+<!-- Left Motor -->
+<g transform="translate(650,220)">
+  <rect width="120" height="70" rx="4" fill="#141410" stroke="#F59E0B" stroke-width="1"/>
+  <text x="60" y="16" text-anchor="middle" fill="#F59E0B" font-size="9" letter-spacing="1">MOTOR L</text>
+  <text x="60" y="30" text-anchor="middle" fill="#E8E4D9" font-size="10" font-weight="500">DC Motor</text>
+  <text x="60" y="44" text-anchor="middle" fill="#7A7568" font-size="8">3.7V · ~150mA</text>
+  <!-- terminals -->
+  <circle cx="15" cy="60" r="4" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="15" y="64" text-anchor="middle" fill="#F59E0B" font-size="8">M+</text>
+  <circle cx="45" cy="60" r="4" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="45" y="64" text-anchor="middle" fill="#F59E0B" font-size="8">M−</text>
+  <!-- wheel symbol -->
+  <circle cx="95" cy="38" r="18" fill="none" stroke="#3D3B34" stroke-width="1"/>
+  <circle cx="95" cy="38" r="8"  fill="none" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="80" y1="38" x2="110" y2="38" stroke="#3D3B34" stroke-width="0.5"/>
+  <line x1="95" y1="22" x2="95"  y2="54" stroke="#3D3B34" stroke-width="0.5"/>
+</g>
+
+<!-- Right Motor -->
+<g transform="translate(650,360)">
+  <rect width="120" height="70" rx="4" fill="#141410" stroke="#F59E0B" stroke-width="1"/>
+  <text x="60" y="16" text-anchor="middle" fill="#F59E0B" font-size="9" letter-spacing="1">MOTOR R</text>
+  <text x="60" y="30" text-anchor="middle" fill="#E8E4D9" font-size="10" font-weight="500">DC Motor</text>
+  <text x="60" y="44" text-anchor="middle" fill="#7A7568" font-size="8">3.7V · ~150mA</text>
+  <circle cx="15" cy="60" r="4" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="15" y="64" text-anchor="middle" fill="#F59E0B" font-size="8">M+</text>
+  <circle cx="45" cy="60" r="4" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="45" y="64" text-anchor="middle" fill="#F59E0B" font-size="8">M−</text>
+  <circle cx="95" cy="38" r="18" fill="none" stroke="#3D3B34" stroke-width="1"/>
+  <circle cx="95" cy="38" r="8"  fill="none" stroke="#3D3B34" stroke-width="0.8"/>
+  <line x1="80" y1="38" x2="110" y2="38" stroke="#3D3B34" stroke-width="0.5"/>
+  <line x1="95" y1="22" x2="95"  y2="54" stroke="#3D3B34" stroke-width="0.5"/>
+</g>
+
+<!-- ═══════════════════════════════════════
+     WIRES
+════════════════════════════════════════ -->
+
+<!-- Battery + → L298N VCC -->
+<polyline points="80,135 80,160 64,160 64,417" fill="none" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arr-red)" opacity="0.8"/>
+
+<!-- Battery − → L298N GND -->
+<polyline points="150,135 150,155 240,155 240,435" fill="none" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arr-blue)" opacity="0.8"/>
+
+<!-- L298N 5V out → Arduino 5V -->
+<polyline points="216,417 270,417 270,352 323,352" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arr)" opacity="0.8"/>
+
+<!-- L298N GND → Arduino GND -->
+<polyline points="216,435 280,435 280,370 323,370" fill="none" stroke="#60a5fa" stroke-width="1.2" marker-end="url(#arr-blue)" opacity="0.7"/>
+
+<!-- Sensor array → Arduino A0-A4 (yellow wires) -->
+<!-- S0 → A0 -->
+<polyline points="308,148 308,168 260,168 260,232 497,232" fill="none" stroke="#fbbf24" stroke-width="1" opacity="0.7" stroke-dasharray="4,2"/>
+<!-- S1 → A1 -->
+<polyline points="356,148 356,175 255,175 255,250 497,250" fill="none" stroke="#fbbf24" stroke-width="1" opacity="0.7" stroke-dasharray="4,2"/>
+<!-- S2 → A2 -->
+<polyline points="404,148 404,180 497,268" fill="none" stroke="#F59E0B" stroke-width="1.2" opacity="0.9" stroke-dasharray="4,2"/>
+<!-- S3 → A3 -->
+<polyline points="452,148 452,185 250,185 250,286 497,286" fill="none" stroke="#fbbf24" stroke-width="1" opacity="0.7" stroke-dasharray="4,2"/>
+<!-- S4 → A4 -->
+<polyline points="500,148 500,190 245,190 245,304 497,304" fill="none" stroke="#fbbf24" stroke-width="1" opacity="0.7" stroke-dasharray="4,2"/>
+
+<!-- Arduino D3 (ENA) → L298N ENA -->
+<polyline points="323,232 295,232 295,317 216,317" fill="none" stroke="#a78bfa" stroke-width="1.2" opacity="0.8"/>
+<!-- Arduino D5 (IN1) → L298N IN1 -->
+<polyline points="323,250 290,250 290,277 216,277" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+<!-- Arduino D6 (IN2) → L298N IN2 -->
+<polyline points="323,268 285,268 285,297 216,297" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+<!-- Arduino D9 (IN3) → L298N IN3 -->
+<polyline points="323,286 285,286 285,347 216,347" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+<!-- Arduino D10 (IN4) → L298N IN4 -->
+<polyline points="323,304 290,304 290,367 216,367" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+<!-- Arduino D11 (ENB) → L298N ENB -->
+<polyline points="323,322 295,322 295,387 216,387" fill="none" stroke="#a78bfa" stroke-width="1.2" opacity="0.8"/>
+
+<!-- L298N OUT1,OUT2 → Motor L -->
+<polyline points="216,277 620,277 650,250" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.8"/>
+<polyline points="216,297 615,297 650,262" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.8"/>
+
+<!-- L298N OUT3,OUT4 → Motor R -->
+<polyline points="216,347 620,347 650,393" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.8"/>
+<polyline points="216,367 615,367 650,405" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.8"/>
+
+<!-- ═══════════════════════════════════════
+     LEGEND
+════════════════════════════════════════ -->
+<g transform="translate(650,470)">
+  <rect width="200" height="120" rx="4" fill="#0F0F0C" stroke="#3D3B34" stroke-width="0.5"/>
+  <text x="100" y="16" text-anchor="middle" fill="#7A7568" font-size="8" letter-spacing="2">LEGEND</text>
+  <line x1="10" y1="28" x2="40" y2="28" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="46" y="32" fill="#ef4444" font-size="8">Power +VCC</text>
+  <line x1="10" y1="44" x2="40" y2="44" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="46" y="48" fill="#60a5fa" font-size="8">Ground GND</text>
+  <line x1="10" y1="60" x2="40" y2="60" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="46" y="64" fill="#22c55e" font-size="8">Digital signal</text>
+  <line x1="10" y1="76" x2="40" y2="76" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="46" y="80" fill="#a78bfa" font-size="8">PWM signal</text>
+  <line x1="10" y1="92" x2="40" y2="92" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="46" y="96" fill="#fbbf24" font-size="8">Analog sensor</text>
+  <line x1="10" y1="108" x2="40" y2="108" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="46" y="112" fill="#F59E0B" font-size="8">Motor output</text>
+</g>
+
+<!-- Notes -->
+<text x="60" y="580" fill="#3D3B34" font-size="8">* 3.7V Li-Ion supplies L298N directly — motors operate at reduced speed vs nominal 5V</text>
+<text x="60" y="592" fill="#3D3B34" font-size="8">* L298N internal 5V regulator powers Arduino Nano via 5V pin — no separate regulator needed</text>
+<text x="60" y="604" fill="#3D3B34" font-size="8">* TCRT5000 sensors use 220Ω series resistor on IR LED — not shown for clarity</text>
+
+<!-- Corner accents -->
+<rect x="60" y="62" width="20" height="20" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.4"/>
+<rect x="820" y="62" width="20" height="20" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.4"/>
+<rect x="60" y="598" width="20" height="20" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.4"/>
+<rect x="820" y="598" width="20" height="20" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.4"/>
+</svg>
